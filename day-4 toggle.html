@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Show/Hide Content</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+    .content-section {
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      width: 50%;
+      text-align: left;
+      background-color: #f9f9f9;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>TROGGLE SHOW AND HIDE</h1>
+  <p>Click the buttons below to show or hide the content in each section.</p>
+
+  <!-- Section 1 -->
+  <div class="content-section">
+    <button onclick="toggleContent('section1')">Beginner</button>
+    <div id="section1" class="hidden">
+      <p>Study with a basic consept.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="content-section">
+    <button onclick="toggleContent('section2')">Intermediate</button>
+    <div id="section2" class="hidden">
+      <p>Make some project based on your language.</p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="content-section">
+    <button onclick="toggleContent('section3')">Advanced</button>
+    <div id="section3" class="hidden">
+      <p>Make some advanced project tht you make to except in real-time.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden'); // Show the content
+      } else {
+        content.classList.add('hidden'); // Hide the content
+      }
+    }
+  </script>
+</body>
+</html>
